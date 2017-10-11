@@ -14,18 +14,18 @@
 <%= raw @content_html %>
 
 
-<a href="/tips/<%= @tip.id %>/edit"><button>Edit</button></a>
+<a href="/tips/<%= @tip.id %>/edit"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit</button></a>
 
-<a href="/tips/<%= @tip.id %>/delete"><button>Delete</button></a>
+<a href="/tips/<%= @tip.id %>/delete"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button></a>
 
-<a href="/tips"><button>All tips</button></a>
+<a href="/tips"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">All tips</button></a>
 
 
 <%= form_tag '/comments', method: 'post' do %>
 <input type="hidden" name="tip_id" value="<%= @tip.id %>">
   <label for="">Comment</label>
   <textarea name="content" id="" cols="30" rows="8"></textarea>
-  <button>Post comment</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Post comment</button>
 <% end %>
 
 

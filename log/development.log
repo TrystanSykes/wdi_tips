@@ -3605,3 +3605,264 @@ Processing by TipsController#edit as HTML
 Completed 200 OK in 62ms (Views: 39.0ms | ActiveRecord: 11.2ms)
 
 
+Started GET "/dishes/4" for 127.0.0.1 at 2017-10-11 11:52:32 +1100
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/dishes/4"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:52:35 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 226ms (Views: 224.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:52:37 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (1.4ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 67ms (Views: 39.0ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/tips/1" for 127.0.0.1 at 2017-10-11 11:52:40 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTip Load (0.5ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 1]]
+  Rendered tips/show.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 87ms (Views: 34.7ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:52:44 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.7ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tips/1" for 127.0.0.1 at 2017-10-11 11:52:50 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTip Load (0.8ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 1]]
+  Rendered tips/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 34ms (Views: 27.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:52:54 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.3ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tips/4" for 127.0.0.1 at 2017-10-11 11:52:55 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTip Load (0.5ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 4]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 4]]
+  Rendered tips/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 44ms (Views: 36.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/tips/7" for 127.0.0.1 at 2017-10-11 11:53:11 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTip Load (0.4ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 7]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 7]]
+  Rendered tips/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 31ms (Views: 25.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:54:36 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:54:41 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:54:46 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:55:31 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:55:34 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.3ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tips/2" for 127.0.0.1 at 2017-10-11 11:55:36 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTip Load (0.7ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 2]]
+  Rendered tips/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:55:41 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.6ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:55:54 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:56:09 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:56:12 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:56:13 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:56:20 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.3ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tips/2" for 127.0.0.1 at 2017-10-11 11:57:07 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTip Load (0.6ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 2]]
+  Rendered tips/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 11:57:14 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.5ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tips/1" for 127.0.0.1 at 2017-10-11 11:57:49 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTip Load (0.5ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 1]]
+  Rendered tips/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 11:58:01 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-11 12:00:12 +1100
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tips" for 127.0.0.1 at 2017-10-11 12:00:15 +1100
+Processing by TipsController#index as HTML
+  Rendering tips/index.html.erb within layouts/application
+  [1m[36mTip Load (0.3ms)[0m  [1m[34mSELECT "tips".* FROM "tips"[0m
+  Rendered tips/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tips/2" for 127.0.0.1 at 2017-10-11 12:00:17 +1100
+Processing by TipsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTip Load (0.4ms)[0m  [1m[34mSELECT  "tips".* FROM "tips" WHERE "tips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering tips/show.html.erb within layouts/application
+  [1m[36mTag Load (0.6ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."tip_id" = $1[0m  [["tip_id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."tip_id" = $1[0m  [["tip_id", 2]]
+  Rendered tips/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 1.2ms)
+
+
