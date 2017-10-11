@@ -1,10 +1,15 @@
 <h1>New tip</h1>
 
 <form action="/tips" method="post" >
+
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="">Title</label>
-  <input type="text" name="title">
-  <label for="">Content</label>
-  <textarea name="content" ></textarea>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input class="mdl-textfield__input" type="text" name="title">
+  <label class="mdl-textfield__label" for="">Title</label>
+</div>
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <textarea class="mdl-textfield__input" name="content" ></textarea>
+  <label class="mdl-textfield__label" for="">Content</label>
+</div>
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit">Post</button>
 </form>  

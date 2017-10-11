@@ -1,3 +1,4 @@
+
 <h1 class="details_h1"><%= @tip.title %></h1>
 
 <% if @tags %>
@@ -11,6 +12,8 @@
   </ul>
 </div>
 <% end %>
+
+
 <%= raw @content_html %>
 
 
@@ -18,13 +21,16 @@
 
 <a href="/tips/<%= @tip.id %>/delete"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Delete</button></a>
 
-<a href="/tips"><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">All tips</button></a>
+
 
 
 <%= form_tag '/comments', method: 'post' do %>
-<input type="hidden" name="tip_id" value="<%= @tip.id %>">
-  <label for="">Comment</label>
-  <textarea name="content" id="" cols="30" rows="8"></textarea>
+  <input type="hidden" name="tip_id" value="<%= @tip.id %>">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <textarea class="mdl-textfield__input" name="content" id="" cols="30" rows="8"></textarea>
+    <label class="mdl-textfield__label" for="">Comment</label>
+  </div>
+
   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Post comment</button>
 <% end %>
 
@@ -32,3 +38,4 @@
 <% @comments.each do |comment| %>
 <p><%= comment.content %></p>
 <% end %>
+

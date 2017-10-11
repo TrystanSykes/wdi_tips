@@ -15,3 +15,16 @@
 .tag_list li {
   display: inline;
 }
+
+.mdl-button {
+  margin: 10px;
+}
+
+.mdl-textfield {
+  display: block;
+}
+
+.mdl-layout-title {
+  font-size: 3em;
+  display: block;
+}
