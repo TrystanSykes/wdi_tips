@@ -1,0 +1,17 @@
+.tag_block {
+  display: inline-block;
+  float: right;
+}
+
+.details_h1 {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.tag_list {
+  list-style: none;
+}
+
+.tag_list li {
+  display: inline;
+}

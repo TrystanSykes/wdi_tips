@@ -1,0 +1,5 @@
+<% @tips.each do |tip| %>
+<a href="/tips/<%= tip.id %>"><h1><%= tip.title %></h1></a>
+<% end %>
+
+<a href="/tips/new"><button>Create new tip</button></a>
